@@ -1,0 +1,29 @@
+/* Áp dụng cho tiêu đề (h1, h2) */
+h1 {
+    font-family: 'Pacifico', cursive, sans-serif; /* Pacifico (chính), cursive (dự phòng), sans-serif (cuối cùng) */
+    font-size: 2.5em;
+    color: #b30a40; /* Màu hồng đậm*/
+}
+h2 {
+    font-family: 'Pacifico', cursive, sans-serif; /* Pacifico (chính), cursive (dự phòng), sans-serif (cuối cùng) */
+    font-size: 2.5em;
+    color: #b30a40; /* Màu hồng đậm*/
+}
+/* Áp dụng cho nội dung (p, li, span) */
+body, p, li {
+    font-family: 'Roboto', sans-serif; /* Roboto (chính), sans-serif (dự phòng) */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Nút bấm (Button) */
+.btn-primary {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

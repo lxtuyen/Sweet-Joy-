@@ -1,0 +1,26 @@
+services:
+  mongo:
+    image: mongo
+    container_name: mongo-container
+    ports:
+      - 27018:27017
+    volumes: 
+      - './mongodb:/data/db'
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Sweetjoy26
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    container_name: mongo-express-container
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://root:Sweetjoy26@mongo:27017/
+      ME_CONFIG_BASICAUTH_ENABLED: true
+      ME_CONFIG_BASICAUTH_USERNAME: Sweetjoy26
+      ME_CONFIG_BASICAUTH_PASSWORD: Sweetjoy26
+  #docker-compose -f mongo-compose.yml up -d
+  #mongosh "mongodb://root:Sweetjoy26@localhost:27018/" --username root authenticationDatabase admin
