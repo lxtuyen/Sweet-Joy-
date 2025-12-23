@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Bakery</title>
+    <link rel="shortcut icon" type="image" href="./image/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- bootstrap links -->
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    <!-- fonts links -->
+    <!-- icons links -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- icons links -->
+    <!-- animation links -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- animation links -->
+</head>
+<body>
+    <div class="all-content">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-md" id="navbar">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#" id="logo"><img src="./image/logo.png" alt="" width="50px">Sweet Joy</a>
+          
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span><img src="./image/menu.png" alt="" width="30px"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                 <!-- dropdown -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Bánh sinh nhật</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Bánh mỳ & Bánh mặn</a>
+                </li>
+                
+                <!-- dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                     Cookie & Minicake
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Cookie</a>
+                        <a href="#" class="dropdown-item">Mini Cake</a>
+                        <a href="#" class="dropdown-item">Petit</a>
+                        <a href="#" class="dropdown-item">Ice - Cream</a>
+                        <a href="#" class="dropdown-item">Caramen</a>
+                    </div>
+                </li>
+                <!-- dropdown -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Dự án</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Khuyến mãi</a>
+                </li>
+              </ul>
+            </div>
+            <div class="icons">
+                <img src="./image/user.png" alt="" width="20px">
+                <img src="./image/heart.png" alt="" width="20px">
+                <img src="./image/add.png" alt="" width="24px">
+            </div>
+          </nav>
+        <!-- navbar end -->
+      
+
+
+        <!-- home section -->
+        <div class="home">
+            <div class="content" data-aos="zoom-out-right">
+                
+               
+                <h2>TIN TỨC</h2>
+               
+            </div>
+            <div class="img"  data-aos="zoom-out-left">
+              
+            </div>
+        </div>
+        <!-- home section end -->
+
+      <!-- top cards -->
+      <div class="container" id="box"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <div class="row">
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                   
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                   
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- top cards end -->
+
+    
+      
+
+      <!-- product cards -->
+      <section id="product-cards"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <div class="container">
+            <h1>TIN TỨC</h1>
+            <div class="row" style="margin-top:50px;">
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <div class="overlay">
+                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                    </div>
+                    <img src="./image/Mery.png" alt="">
+                    <div class="card-body">
+                        <h3>Bánh kem noel - ngọt ngào mùa giáng...</h3>
+                        <div class="star">
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star "></i>
+                          <i class="bx bxs-star "></i>
+                        </div>
+                        <p>Mỗi mùa Giáng Sinh về, không khí se lạnh len lỏi khắp phố phường, ánh đèn lung linh rực rỡ, tiếng nhạc vang lên khắp nơi – đó cũng là lúc những chiếc bánh kem Noel trở...</p>
+                      
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <div class="overlay">
+                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                    </div>
+                    <img src="./image/Không khí.png" alt="">
+                    <div class="card-body">
+                        <h3>Không khí noel ngọt ngào cùng bánh nhà...</h3>
+                        <div class="star">
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star "></i>
+                          <i class="bx bxs-star "></i>
+                        </div>
+                        <p>Tháng 12 chạm ngõ cũng là lúc cả không gian ngập tràn sắc đỏ – xanh – trắng của mùa Giáng Sinh. Đây chính là thời điểm những hương thơm quen thuộc bắt đầu trở lại: mùi bơ sữa nồ...</p>
+                        
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <div class="overlay">
+                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                    </div>
+                    <img src="./image/Tiệc trà.png" alt="">
+                    <div class="card-body">
+                        <h3>Set up tiệc trà trọn gói - chuẩn...</h3>
+                        <div class="star">
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star "></i>
+                        </div>
+                        <p>Trong những sự kiện chuyên nghiệp hay buổi gặp gỡ thân mật, một bàn tiệc trà được chuẩn bị chỉn chu luôn tạo nên điểm nhấn tinh tế và mang lại trải nghiệm thoải mái cho người th...</p>
+                       
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <div class="overlay">
+                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                    </div>
+                    <img src="./image/Nhà giáo.png" alt="">
+                    <div class="card-body">
+                        <h3>Bánh kem tri ân ngày nhà giáo Việt...</h3>
+                        <div class="star">
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                        </div>
+                        <p>Ngày Nhà Giáo Việt Nam 20/11 - một trong những dịp đặc biệt và ý nghĩa nhất trong năm  - ngày hướng về những người thầy, người cô, những người đã dành cả cuộc đời...</p>
+                       
+                    </div>
+                </div>
+               </div>
+            </div>
+
+
+
+
+
+
+            <div class="row" style="margin-top:50px;"    data-aos="fade-up"
+            data-aos-duration="1500">
+                <div class="col-md-3 py-3 py-md-0">
+                 <div class="card">
+                     <div class="overlay">
+                         <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                     </div>
+                     <img src="./image/Tháng yêu thương.png" alt="">
+                     <div class="card-body">
+                         <h3>Chúc mừng ngày phụ nữ Việt Nam 20/10...</h3>
+                         <div class="star">
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star "></i>
+                           <i class="bx bxs-star "></i>
+                         </div>
+                         <p>Tháng Mười về, mang theo hương hoa thơm ngát và những lời chúc tốt lành gửi đến một nửa thế giới – những người phụ nữ Việt Nam dịu dàng, kiên cường và đầy yêu thương.Ngày 20/10 ...</p>
+                        
+                     </div>
+                 </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                 <div class="card">
+                     <div class="overlay">
+                         <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                     </div>
+                     <img src="./image/Bánh trung thu.png" alt="">
+                     <div class="card-body">
+                         <h3>Bộ sưu tập bánh trúng thu 2025...</h3>
+                         <div class="star">
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star "></i>
+                           <i class="bx bxs-star "></i>
+                         </div>
+                         <p>Trung Thu về, mang theo ánh trăng vàng ấm áp, tiếng trống lân rộn rã và hương thơm ngọt ngào của những chiếc bánh nướng, bánh dẻo. Dưới ánh trăng rằm, ta bắt gặp những nụ cười h...</p>
+                         
+                     </div>
+                 </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                 <div class="card">
+                     <div class="overlay">
+                         <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                     </div>
+                     <img src="./image/Happy.png" alt="">
+                     <div class="card-body">
+                         <h3>Bánh kem 8/3...</h3>
+                         <div class="star">
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star "></i>
+                         </div>
+                         <p>Ngày Quốc tế Phụ Nữ 8-3 - Ngày tôn vinh những người phụ nữ vĩ đại trên toàn Thế giới. Đây là ngày để phái nam thể hiện tình yêu, lòng biết ơn, sự quý mến của mình đối với những người phụ nữ tuyệt vời của họ. Phụ nữ sinh ra là để yêu thương, để nâng niu trong vui vẻ và hạnh phúc. 
+  ...</p>
+                        
+                     </div>
+                 </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                 <div class="card">
+                     <div class="overlay">
+                         <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                         <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                     </div>
+                     <img src="./image/Hoa.png" alt="">
+                     <div class="card-body">
+                         <h3>Set up tiệc trà sang trọng...</h3>
+                         <div class="star">
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                           <i class="bx bxs-star checked"></i>
+                         </div>
+                         <p>Bạn đang tìm đơn vị cung cấp dịch vụ set up tiệc trà chuyên nghiệp, đẹp mắt và ấn tượng?Một buổi tiệc trà sang trọng, tinh tế sẽ là điểm nhấn hoàn hảo cho mọi dịp đặc biệt như:�...</p>
+                         
+                     </div>
+                 </div>
+                </div>
+             </div>
+        </div>
+      </section>
+
+
+
+
+      <!-- about -->
+      <div class="container" id="about"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <h1>Về chúng tôi</h1>
+        <div class="row">
+            <div class="col-md-6 py-3 py-md-0">
+                <div class="card">
+                    <img src="./image/about.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 py-3 py-md-0">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias explicabo nulla dicta perferendis cupiditate autem assumenda unde fugit? Corrupti ipsa fugiat similique voluptate temporibus, cupiditate cumque iusto? Necessitatibus suscipit qui molestias odit ad aspernatur harum aliquid ipsam nisi, culpa quae, magnam dolores cupiditate velit exercitationem ratione deleniti dignissimos labore quia esse ea quos consequuntur perferendis aliquam. Est assumenda doloremque nobis, tenetur fuga similique eligendi nihil non officia possimus aliquid animi nisi ipsum qui veritatis repellat harum accusamus odit iusto laudantium voluptatum ipsa ut fugit veniam. Voluptates sint molestiae officia consequuntur iure repudiandae autem reiciendis, perspiciatis veritatis soluta quia velit necessitatibus.</p>                
+
+                <div id="bt"><button>Read More...</button></div>
+            </div>
+        </div>
+      </div>
+      <!-- about -->
+
+
+      <!-- contact  -->
+      <div class="container" id="contact"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <h1>Liên hệ chúng tôi</h1>
+        <div class="row">
+            <div class="col-md-4 py-1 py-md-0">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="usr" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-md-4 py-1 py-md-0">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="eml" placeholder="Email">
+                </div>
+            </div>
+            <div class="col-md-4 py-1 py-md-0">
+                <div class="form-group">
+                    <input type="number" class="form-control" id="phn" placeholder="Phone">
+                </div>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+        </div>
+        <div id="messagebtn"><button>Send Message</button></div>
+      </div>
+      <!-- contact end -->
+
+
+      <!-- footer -->
+      <footer id="footer"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <h1 class="text-center">Sweet Joy</h1>
+        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, accusantium.</p>
+        <div class="icons text-center">
+            <i class="bx bxl-twitter"></i>
+            <i class="bx bxl-facebook"></i>
+            <i class="bx bxl-google"></i>
+            <i class="bx bxl-skype"></i>
+            <i class="bx bxl-instagram"></i>
+        </div>
+        <div class="copyright text-center">
+            &copy; Copyright <strong>Sweet Joy</strong> .All Rights Reserved
+        </div>
+        <div class="credite text-center">
+            Designed By <a href="#"><span>Nhóm chúng tôi</span></a>
+        </div>
+      </footer>
+      <!-- footer -->
+
+      <a href="#" class="arrow"><i><img src="./image/up-arrow.png" alt="" width="50px"></i></a>
+
+
+
+    </div>
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
