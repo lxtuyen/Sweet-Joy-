@@ -1,29 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const cartController = require("../controllers/Carts.controller");
-const auth = require("../middlewares/auth.middleware");
+const Product = require("../models/Product");
 
-// Giỏ hàng (bắt buộc đăng nhập)
-router.get("/", auth, cartController.getCart);           // Xem giỏ
-router.post("/", auth, cartController.addToCart);        // Thêm
-router.put("/", auth, cartController.updateCartItem);    // Sửa số lượng
-router.delete("/:productId", auth, cartController.removeCartItem); // Xóa SP
-router.delete("/", auth, cartController.clearCart);      // Xóa tất cả
-
-module.exports = router;
 // ================== ADD TO CART ==================
 router.post("/add", async (req, res) => {
   const { productId } = req.body;
 
-  if (!req.session.cart) {
-    req.session.cart = [];
-  }
+  if (!req.session.cart) req.session.cart = [];
 
   const product = await Product.findById(productId);
 
-  if (!product) {
-    return res.redirect("/");
-  }
+  if (!product) return res.redirect("/");
 
   const exist = req.session.cart.find(
     item => item.product._id.toString() === productId
@@ -36,6 +23,47 @@ router.post("/add", async (req, res) => {
       product,
       quantity: 1
     });
+  }
+
+  res.redirect("/cart");
+});
+
+// ================== XEM GIỎ HÀNG ==================
+router.get("/", (req, res) => {
+  const cart = req.session.cart || [];
+
+  let total = 0;
+  cart.forEach(item => {
+    total += item.product.price * item.quantity;
+  });
+
+  res.render("pages/cart", {
+    title: "Giỏ hàng",
+    cart,
+    total
+  });
+});
+// ================== UPDATE QUANTITY ==================
+router.post("/update", (req, res) => {
+  const { productId, action } = req.body;
+
+  if (!req.session.cart) return res.redirect("/cart");
+
+  const item = req.session.cart.find(
+    item => item.product._id.toString() === productId
+  );
+
+  if (!item) return res.redirect("/cart");
+
+  if (action === "increase") {
+    item.quantity++;
+  } else if (action === "decrease") {
+    item.quantity--;
+    if (item.quantity <= 0) {
+      req.session.cart = req.session.cart.filter(
+        item => item.product._id.toString() !== productId
+      );
+    }
   }
 
   res.redirect("/cart");

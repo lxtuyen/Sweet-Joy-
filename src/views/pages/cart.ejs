@@ -2,12 +2,12 @@
   <h2 class="mb-4" style="font-family:'Pacifico'">🛒 Giỏ hàng</h2>
 
   <% if (cart.length === 0) { %>
-    <p>Giỏ hàng trống 😢</p>
+    <p class="text-muted">Giỏ hàng trống 😢</p>
     <a href="/" class="btn btn-danger">Tiếp tục mua sắm</a>
   <% } else { %>
 
-  <table class="table align-middle">
-    <thead>
+  <table class="table align-middle text-center">
+    <thead class="table-light">
       <tr>
         <th>Sản phẩm</th>
         <th>Giá</th>
@@ -19,35 +19,57 @@
     <tbody>
       <% cart.forEach(item => { %>
         <tr>
-          <td>
-            <img src="<%= item.product.image %>" width="60">
+          <td class="text-start">
+            <img src="<%= item.product.image %>" width="60" class="me-2 rounded">
             <strong><%= item.product.name %></strong>
           </td>
-          <td><%= item.product.price.toLocaleString() %> đ</td>
-          <td><%= item.quantity %></td>
+
+          <td class="text-danger fw-bold">
+            <%= item.product.price.toLocaleString() %> đ
+          </td>
+
+          <!-- 🔥 Tăng / Giảm số lượng -->
           <td>
+            <form action="/cart/update" method="POST" class="d-flex justify-content-center align-items-center gap-2">
+              <input type="hidden" name="productId" value="<%= item.product._id %>">
+
+              <button type="submit" name="action" value="decrease"
+                class="btn btn-sm btn-outline-dark fw-bold">－</button>
+
+              <span class="mx-1 fw-bold fs-6"><%= item.quantity %></span>
+
+              <button type="submit" name="action" value="increase"
+                class="btn btn-sm btn-outline-dark fw-bold">＋</button>
+            </form>
+          </td>
+
+          <td class="fw-bold">
             <%= (item.product.price * item.quantity).toLocaleString() %> đ
           </td>
+
           <td>
-            <form action="/cart/remove" method="POST">
-              <input type="hidden" name="productId" value="<%= item.product._id %>">
-              <button class="btn btn-sm btn-outline-danger">❌</button>
+            <form action="/api/cart/add" method="POST">
+              <input type="hidden" name="productId" value="<%= p._id %>">
+                <button type="submit" class="btn btn-outline-danger btn-sm">
+                  Thêm vào giỏ hàng
+                </button>
             </form>
+
           </td>
         </tr>
       <% }) %>
     </tbody>
   </table>
 
-  <h4 class="text-end">
+  <h4 class="text-end mt-3">
     Tổng tiền:
-    <span class="text-danger">
+    <span class="text-danger fw-bold fs-4">
       <%= total.toLocaleString() %> đ
     </span>
   </h4>
 
-  <div class="text-end mt-3">
-    <a href="/" class="btn btn-outline-secondary">← Mua thêm</a>
+  <div class="text-end mt-4">
+    <a href="/" class="btn btn-outline-secondary me-2">← Mua thêm</a>
     <a href="/checkout" class="btn btn-danger">Thanh toán</a>
   </div>
 

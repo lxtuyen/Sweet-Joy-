@@ -7,15 +7,15 @@ router.get("/", async (req, res) => {
   try {
     const birthdayCakes = await Product.find({
       category: "Bánh sinh nhật"
-    }).limit(8);
+    }).limit(4);
 
     const savoryBreads = await Product.find({
       category: "Bánh mì-bánh mặn"
-    }).limit(8);
+    }).limit(4);
 
     const cookiesMini = await Product.find({
       category: "Cookie & minicake"
-    }).limit(8);
+    }).limit(4);
 
     res.render("pages/home", {
       title: "Sweet Joy - Trang chủ",
@@ -83,6 +83,12 @@ router.get("/cart", (req, res) => {
     total
   });
 });
-
+/* ================= TRANG PROMOTION ================= */
+// Route hiển thị trang khuyến mãi
+router.get("/promotion", (req, res) => {
+    res.render("pages/promotion", {
+        title: "Chương trình Khuyến mãi"
+    });
+});
 /* ================= EXPORT (LUÔN Ở CUỐI) ================= */
 module.exports = router;

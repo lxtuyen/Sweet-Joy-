@@ -21,12 +21,12 @@
             <%= p.price.toLocaleString() %> đ
           </p>
 
-          <!-- THÊM VÀO GIỎ -->
+          <!-- Nút thêm vào giỏ  -->
           <form action="/cart/add" method="POST">
             <input type="hidden" name="productId" value="<%= p._id %>">
-            <a type="submit" class="btn btn-outline-danger btn-sm">
-              Thêm vào giỏ hàng
-            </a>
+            <button type="submit" class="btn btn-outline-danger btn-sm w-100">
+              Thêm vào giỏ
+            </button>
           </form>
 
         </div>
