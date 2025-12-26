@@ -1,0 +1,48 @@
+<div class="container-fluid mt-4">
+  <h1 class="mb-4">📊 Admin Dashboard</h1>
+
+  <div class="row g-4">
+    <!-- Tổng đơn hàng -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body text-center">
+          <h5 class="card-title text-muted">Tổng đơn hàng</h5>
+          <h2 class="fw-bold text-primary"><%= totalOrders %></h2>
+          <a href="/admin/orders" class="btn btn-outline-primary btn-sm mt-2">
+            Xem chi tiết
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tổng sản phẩm -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body text-center">
+          <h5 class="card-title text-muted">Tổng sản phẩm</h5>
+          <h2 class="fw-bold text-success"><%= totalProducts %></h2>
+          <a href="/admin/products" class="btn btn-outline-success btn-sm mt-2">
+            Quản lý sản phẩm
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thao tác nhanh -->
+    <div class="col-md-12 col-lg-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body text-center">
+          <h5 class="card-title text-muted">Thao tác nhanh</h5>
+          <div class="d-grid gap-2 mt-3">
+            <a href="/admin/products/new" class="btn btn-primary">
+              ➕ Thêm sản phẩm
+            </a>
+            <a href="/admin/orders" class="btn btn-secondary">
+              📦 Quản lý đơn hàng
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

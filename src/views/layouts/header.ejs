@@ -1,57 +1,218 @@
 <header>
   <div class="row">
-            <div class="col-9">
-                <h1 style="color: #b90834; margin-left:10%; font-family: 'Pacifico'; font-size: 50px;" class="mt-2"> Sweet Joy</h1>
-            </div>
-            <div class="col-3 float-end mt-3">
-                
-                <form class="d-flex m-2" >
-                    <input class="form-control me-2" style="margin-left: 0px;" type="text" placeholder="Tìm kiếm">
-                    <button class="btn" style="margin-left: 0px; background-color: #cf4a6b;border-color: rgba(255, 255, 255, 0);" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>                            
-                        </svg>
-                    </button>
-                    <a style="margin:10px; background-color: white;color: black ;border:0px;font-size: 30px;" href="/login">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                        </svg>
-                    </a>
-                </form>
-               
-            </div>
-        </div>
+    <div class="col-9">
+      <h1
+        style="
+          color: #b90834;
+          margin-left: 10%;
+          font-family: 'Pacifico';
+          font-size: 50px;
+        "
+        class="mt-2"
+      >
+        Sweet Joy
+      </h1>
+    </div>
+    <div class="col-3 float-end mt-3">
+      <form class="d-flex m-2" action="/search" method="GET">
+        <input
+          class="form-control me-2"
+          type="text"
+          name="q"
+          placeholder="Tìm kiếm"
+          value="<%= keyword || '' %>"
+        />
 
-  <nav class="navbar navbar-expand-sm " style="background-color: #cf4a6b;color: White;padding-left: 10%;" >
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/" style="background-color: #cf4a6b;color: White;font-size: 18px" ><b>Home</b></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                <div class="collapse navbar-collapse d-md-flex justify-content-center" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link" href="/category/banh-sinh-nhat" style="background-color: #cf4a6b;color: White; font-size: 18px"><b>Bánh sinh nhật</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/category/banh-mi-banh-man" style="background-color: #cf4a6b;color: White; font-size: 18px"><b>Bánh mỳ- Bánh mặn</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/category/cookie-minicake" style="background-color: #cf4a6b;color: White; font-size: 18px"><b>Cookie & Minicake</b></a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/promotion" style="background-color: #cf4a6b;color: White;font-size: 18px"><b>Khuyến mại</b></a>
-                        </li>
-                    </ul>
-                </div>
-                <a style="background-color: #cf4a6b;color: White; border:0px;font-size: 30px" href="/Cart">
-                    <b>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                        </svg>
-                    </b>
-                </a>
-            </div>
-        </nav>
+        <button
+          class="btn"
+          style="
+            margin-left: 0px;
+            background-color: #cf4a6b;
+            border-color: rgba(255, 255, 255, 0);
+          "
+          type="submit"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+            />
+          </svg>
+        </button>
+        <% if (!userId) { %>
+        <!-- CHƯA ĐĂNG NHẬP -->
+        <a
+          style="
+            margin: 10px;
+            background-color: white;
+            color: black;
+            border: 0px;
+            font-size: 30px;
+          "
+          href="/login"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+            />
+          </svg>
+        </a>
+        <% } else { %>
+        <!-- ĐÃ ĐĂNG NHẬP -->
+        <a
+          style="
+            margin: 10px;
+            background-color: white;
+            color: black;
+            border: 0px;
+            font-size: 30px;
+          "
+          href="/logout"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="currentColor"
+            class="bi bi-box-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 12.5a.5.5 0 0 1-.5.5H3a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h6.5a.5.5 0 0 1 0 1H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6.5a.5.5 0 0 1 .5.5"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M15.354 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L13.293 7.5H6.5a.5.5 0 0 0 0 1h6.793l-1.647 1.646a.5.5 0 0 0 .708.708z"
+            />
+          </svg>
+        </a>
+        <% } %>
+      </form>
+    </div>
+  </div>
+
+  <nav
+    class="navbar navbar-expand-sm"
+    style="background-color: #cf4a6b; color: White; padding-left: 10%"
+  >
+    <div class="container-fluid">
+      <a
+        class="navbar-brand"
+        href="/"
+        style="background-color: #cf4a6b; color: White; font-size: 18px"
+        ><b>Home</b></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse d-md-flex justify-content-center"
+        id="collapsibleNavbar"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/category/banh-sinh-nhat"
+              style="background-color: #cf4a6b; color: White; font-size: 18px"
+              ><b>Bánh sinh nhật</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/category/banh-mi-banh-man"
+              style="background-color: #cf4a6b; color: White; font-size: 18px"
+              ><b>Bánh mỳ- Bánh mặn</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/category/cookie-minicake"
+              style="background-color: #cf4a6b; color: White; font-size: 18px"
+              ><b>Cookie & Minicake</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="/promotion"
+              style="background-color: #cf4a6b; color: White; font-size: 18px"
+              ><b>Khuyến mại</b></a
+            >
+          </li>
+        </ul>
+      </div>
+      <a
+        style="
+          background-color: #cf4a6b;
+          color: White;
+          border: 0px;
+          font-size: 30px;
+        "
+        href="/Cart"
+      >
+        <b>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-cart"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+            />
+          </svg>
+        </b>
+      </a>
+      <a
+        style="
+          background-color: #cf4a6b;
+          color: White;
+          border: 0px;
+          font-size: 30px;
+        "
+        href="/orders"
+      >
+        <b>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-cart"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+            />
+          </svg>
+        </b>
+      </a>
+    </div>
+  </nav>
 </header>

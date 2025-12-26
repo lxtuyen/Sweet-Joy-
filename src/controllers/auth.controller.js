@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Cart = require("../models/Carts");
 
 // ================== REGISTER ==================
 exports.register = async (req, res) => {
@@ -20,18 +21,16 @@ exports.register = async (req, res) => {
     const user = await User.create({
       name,
       email,
-      password: hashedPassword
+      password: hashedPassword,
     });
 
     res.status(201).json({
-      message: "Đăng ký thành công"
+      message: "Đăng ký thành công",
     });
-
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
-
 
 // ================== LOGIN ==================
 exports.login = async (req, res) => {
@@ -44,15 +43,11 @@ exports.login = async (req, res) => {
       return res.status(400).json({ message: "Email không tồn tại" });
     }
 
-    // 2. So sánh password
-   /* const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: "Sai mật khẩu" });
-    }*/
-
-    if(password != user.password){
+    if (password != user.password) {
       return res.status(400).json({ message: "Sai mật khẩu" });
     }
+
+    req.session.userId = user._id;
 
     // 3. Tạo token
     const token = jwt.sign(
@@ -68,8 +63,8 @@ exports.login = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
-        role: user.role
-      }
+        role: user.role,
+      },
     });
   } catch (error) {
     res.status(500).json({ message: error.message });

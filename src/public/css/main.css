@@ -56,3 +56,17 @@ body {
   border-color: #000;
   border-radius: 5px;
 }
+.search-box {
+  display: flex;
+  gap: 5px;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+}
+
+.search-box button {
+  padding: 6px 12px;
+  cursor: pointer;
+}

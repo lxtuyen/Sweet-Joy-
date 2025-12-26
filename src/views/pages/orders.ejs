@@ -1,0 +1,26 @@
+<h2>Đơn hàng của tôi</h2>
+
+<% if (orders.length === 0) { %>
+  <p>Bạn chưa có đơn hàng nào.</p>
+<% } else { %>
+  <% orders.forEach(order => { %>
+    <div class="order-box">
+      <h4>Mã đơn: <%= order._id %></h4>
+      <p>Trạng thái: <%= order.orderStatus %></p>
+      <p>Thanh toán: <%= order.paymentStatus %></p>
+      <p>Tổng tiền: <strong><%= order.totalAmount.toLocaleString() %>₫</strong></p>
+
+      <ul>
+        <% order.items.forEach(item => { %>
+          <li>
+            <%= item.name %> - 
+            <%= item.quantity %> x 
+            <%= item.price.toLocaleString() %>₫
+          </li>
+        <% }) %>
+      </ul>
+
+      <hr>
+    </div>
+  <% }) %>
+<% } %>

@@ -1,65 +1,58 @@
 <div class="container my-5">
-  <h2 class="mb-4" style="font-family:'Pacifico'">🛒 Giỏ hàng</h2>
+  <h2 class="mb-4" style="font-family: 'Pacifico'">🛒 Giỏ hàng</h2>
 
   <% if (cart.length === 0) { %>
-    <p class="text-muted">Giỏ hàng trống 😢</p>
-    <a href="/" class="btn btn-danger">Tiếp tục mua sắm</a>
+  <p class="text-muted">Giỏ hàng trống 😢</p>
+  <a href="/" class="btn btn-danger">Tiếp tục mua sắm</a>
   <% } else { %>
 
-  <table class="table align-middle text-center">
-    <thead class="table-light">
+  <table class="table">
+    <thead>
       <tr>
         <th>Sản phẩm</th>
         <th>Giá</th>
         <th>Số lượng</th>
-        <th>Thành tiền</th>
-        <th></th>
+        <th>Hành động</th>
       </tr>
     </thead>
     <tbody>
-      <% cart.forEach(item => { %>
-        <tr>
-          <td class="text-start">
-            <img src="<%= item.product.image %>" width="60" class="me-2 rounded">
-            <strong><%= item.product.name %></strong>
-          </td>
+      <% cart.forEach(function(item) { %>
+      <tr>
+        <td><%= item.product.name %></td>
 
-          <td class="text-danger fw-bold">
-            <%= item.product.price.toLocaleString() %> đ
-          </td>
+        <td><%= item.product.price.toLocaleString() %> đ</td>
 
-          <!-- 🔥 Tăng / Giảm số lượng -->
-          <td>
-            <form action="/cart/update" method="POST" class="d-flex justify-content-center align-items-center gap-2">
-              <input type="hidden" name="productId" value="<%= item.product._id %>">
+        <td><%= item.quantity %></td>
 
-              <button type="submit" name="action" value="decrease"
-                class="btn btn-sm btn-outline-dark fw-bold">－</button>
+        <td>
+          <!-- Tăng -->
+          <form action="/api/cart/update" method="POST" style="display: inline">
+            <input
+              type="hidden"
+              name="productId"
+              value="<%= item.product._id %>"
+            />
+            <input type="hidden" name="action" value="increase" />
+            <button class="btn btn-sm btn-success">+</button>
+          </form>
 
-              <span class="mx-1 fw-bold fs-6"><%= item.quantity %></span>
-
-              <button type="submit" name="action" value="increase"
-                class="btn btn-sm btn-outline-dark fw-bold">＋</button>
-            </form>
-          </td>
-
-          <td class="fw-bold">
-            <%= (item.product.price * item.quantity).toLocaleString() %> đ
-          </td>
-
-          <td>
-            <form action="/api/cart/add" method="POST">
-              <input type="hidden" name="productId" value="<%= p._id %>">
-                <button type="submit" class="btn btn-outline-danger btn-sm">
-                  Thêm vào giỏ hàng
-                </button>
-            </form>
-
-          </td>
-        </tr>
-      <% }) %>
+          <!-- Giảm -->
+          <form action="/api/cart/update" method="POST" style="display: inline">
+            <input
+              type="hidden"
+              name="productId"
+              value="<%= item.product._id %>"
+            />
+            <input type="hidden" name="action" value="decrease" />
+            <button class="btn btn-sm btn-warning">−</button>
+          </form>
+        </td>
+      </tr>
+      <% }); %>
     </tbody>
   </table>
+
+  <h4 class="text-end">Tổng tiền: <%= total.toLocaleString() %> đ</h4>
 
   <h4 class="text-end mt-3">
     Tổng tiền:

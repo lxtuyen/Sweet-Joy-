@@ -1,0 +1,118 @@
+<div class="container mt-4">
+  <h1 class="mb-4">
+    <%= product ? "✏️ Cập nhật sản phẩm" : "➕ Thêm sản phẩm mới" %>
+  </h1>
+
+  <div class="card shadow-sm border-0">
+    <div class="card-body">
+
+    <form
+    method="POST"
+    enctype="multipart/form-data"
+    action="<%= product
+        ? '/admin/products/' + product._id + '/edit'
+        : '/admin/products/new' %>"
+    >
+
+        <!-- Tên sản phẩm -->
+        <div class="mb-3">
+          <label class="form-label">Tên sản phẩm</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            required
+            value="<%= product?.name || '' %>"
+          />
+        </div>
+
+        <!-- Giá -->
+        <div class="mb-3">
+          <label class="form-label">Giá (VND)</label>
+          <input
+            type="number"
+            name="price"
+            class="form-control"
+            required
+            min="0"
+            value="<%= product?.price || '' %>"
+          />
+        </div>
+
+        <!-- Số lượng tồn kho -->
+        <div class="mb-3">
+          <label class="form-label">Số lượng tồn kho</label>
+          <input
+            type="number"
+            name="stock"
+            class="form-control"
+            required
+            min="0"
+            value="<%= product?.stock || '' %>"
+          />
+        </div>
+
+        <!-- Danh mục -->
+        <div class="mb-3">
+          <label class="form-label">Danh mục</label>
+          <select name="category" class="form-select" required>
+            <option value="">-- Chọn danh mục --</option>
+            <option
+              value="Cookie & minicake"
+              <%= product?.category === "Cookie & minicake" ? "selected" : "" %>
+            >
+              Cookie & minicake
+            </option>
+            <option
+              value="Bánh sinh nhật"
+              <%= product?.category === "Bánh sinh nhật" ? "selected" : "" %>
+            >
+              Bánh sinh nhật
+            </option>
+            <option
+              value="Bánh mì-bánh mặn"
+              <%= product?.category === "Bánh mì-bánh mặn" ? "selected" : "" %>
+            >
+              Bánh mì-bánh mặn
+            </option>
+          </select>
+        </div>
+
+        <!-- Hình ảnh (path) -->
+        <div class="mb-3">
+        <label class="form-label">Ảnh sản phẩm</label>
+        <input
+            type="file"
+            name="image"
+            class="form-control"
+            accept="image/*"
+        />
+        </div>
+
+
+        <!-- Preview hình -->
+        <% if (product?.image) { %>
+        <div class="mb-3">
+            <img
+            src="<%= product.image %>"
+            alt="<%= product.name %>"
+            class="img-thumbnail"
+            style="max-height: 150px"
+            />
+        </div>
+        <% } %>
+
+        <!-- Nút -->
+        <div class="d-flex justify-content-between">
+          <a href="/admin/products" class="btn btn-outline-secondary">
+            ⬅ Quay lại
+          </a>
+          <button type="submit" class="btn btn-success">
+            💾 Lưu sản phẩm
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

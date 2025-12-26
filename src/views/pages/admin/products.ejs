@@ -1,0 +1,47 @@
+<h3 class="mb-3">📦 Sản phẩm</h3>
+
+<a href="/admin/products/new" class="btn btn-primary mb-3">
+  ➕ Thêm sản phẩm
+</a>
+
+<table class="table table-striped align-middle">
+  <thead>
+    <tr>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Kho</th>
+      <th style="width: 180px">Hành động</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% products.forEach(p => { %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.price.toLocaleString() %> đ</td>
+        <td><%= p.stock %></td>
+        <td>
+          <!-- Cập nhật -->
+          <a
+            href="/admin/products/<%= p._id %>/edit"
+            class="btn btn-sm btn-warning me-1"
+          >
+            ✏️ Sửa
+          </a>
+
+          <!-- Xóa -->
+          <form
+            action="/admin/products/<%= p._id %>/delete"
+            method="POST"
+            style="display:inline"
+            onsubmit="return confirm('Bạn có chắc muốn xóa sản phẩm này?');"
+          >
+            <button type="submit" class="btn btn-sm btn-danger">
+              🗑️ Xóa
+            </button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

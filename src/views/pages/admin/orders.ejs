@@ -1,0 +1,33 @@
+<h3>Danh sách đơn hàng</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Tổng tiền</th>
+      <th>Trạng thái</th>
+      <th>Ngày</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% orders.forEach(o => { %>
+    <tr>
+      <td><%= o.userId?.email || "Guest" %></td>
+      <td><%= o.totalAmount.toLocaleString() %> đ</td>
+      <td><%= o.orderStatus %></td>
+      <td><%= o.createdAt.toLocaleDateString() %></td>
+      <td>
+        <form method="POST" action="/admin/orders/<%= o._id %>/status">
+          <select name="status" onchange="this.form.submit()">
+            <option <%= o.orderStatus==='pending'?'selected':'' %>>pending</option>
+            <option <%= o.orderStatus==='processing'?'selected':'' %>>processing</option>
+            <option <%= o.orderStatus==='completed'?'selected':'' %>>completed</option>
+            <option <%= o.orderStatus==='cancelled'?'selected':'' %>>cancelled</option>
+          </select>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

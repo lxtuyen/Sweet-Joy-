@@ -1,0 +1,21 @@
+<h2>Kết quả tìm kiếm</h2>
+
+<% if (!keyword) { %>
+  <p>Vui lòng nhập từ khóa để tìm kiếm.</p>
+
+<% } else if (products.length === 0) { %>
+  <p>Không tìm thấy sản phẩm cho "<strong><%= keyword %></strong>"</p>
+
+<% } else { %>
+  <p>Tìm thấy <strong><%= products.length %></strong> sản phẩm cho "<%= keyword %>"</p>
+
+  <div class="product-grid">
+    <% products.forEach(product => { %>
+      <div class="product-card">
+        <h5><%= product.name %></h5>
+        <p><%= product.price.toLocaleString() %>₫</p>
+        <a href="/product/<%= product._id %>">Xem chi tiết</a>
+      </div>
+    <% }) %>
+  </div>
+<% } %>

@@ -66,7 +66,7 @@ const orderSchema = new mongoose.Schema(
     }
   },
   {
-    timestamps: true // 👉 createdAt & updatedAt
+    timestamps: true
   }
 );
 

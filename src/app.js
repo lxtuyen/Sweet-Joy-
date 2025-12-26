@@ -24,10 +24,18 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use((req, res, next) => {
+  res.locals.userId = req.session.userId || null;
+  res.locals.keyword = "";
+  next();
+});
+
+
 app.use("/api/auth", require("./routes/auth.route"));
 app.use("/api/products", require("./routes/products.route"));
 app.use("/api/cart", require("./routes/Carts.route"));
 app.use("/api/orders", require("./routes/Orders.route"));
+app.use("/admin", require("./routes/admin.route"));
 
 app.use("/", require("./routes/view.route"));
 
