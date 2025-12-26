@@ -1,0 +1,26 @@
+<h2>Danh sách đơn hàng</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Khách hàng</th>
+      <th>Tổng tiền</th>
+      <th>Trạng thái</th>
+      <th>Ngày đặt</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% orders.forEach(o => { %>
+      <tr>
+        <td><%= o.userId?.email %></td>
+        <td><%= o.totalPrice.toLocaleString() %> đ</td>
+        <td><span class="badge bg-info"><%= o.status %></span></td>
+        <td><%= o.createdAt.toLocaleString() %></td>
+        <td>
+          <a href="/admin/orders/<%= o._id %>" class="btn btn-sm btn-dark">Xem</a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
