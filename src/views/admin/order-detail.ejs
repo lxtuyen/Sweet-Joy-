@@ -1,0 +1,40 @@
+<h3>Chi tiết đơn hàng</h3>
+
+<p><strong>Khách:</strong> <%= order.userId.email %></p>
+<p><strong>Trạng thái:</strong> <%= order.status %></p>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>Sản phẩm</th>
+      <th>SL</th>
+      <th>Giá</th>
+      <th>Thành tiền</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% order.items.forEach(i => { %>
+      <tr>
+        <td><%= i.productId.name %></td>
+        <td><%= i.quantity %></td>
+        <td><%= i.price.toLocaleString() %> đ</td>
+        <td><%= (i.price * i.quantity).toLocaleString() %> đ</td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<h4 class="text-danger">Tổng: <%= order.totalPrice.toLocaleString() %> đ</h4>
+
+<form action="/admin/orders/status/<%= order._id %>" method="POST" class="mt-3">
+  <select name="status" class="form-select w-25">
+    <option value="Pending">Pending</option>
+    <option value="Shipping">Shipping</option>
+    <option value="Completed">Completed</option>
+    <option value="Canceled">Canceled</option>
+  </select>
+
+  <button class="btn btn-primary mt-2">Cập nhật trạng thái</button>
+</form>
+
+<a href="/admin/orders" class="btn btn-outline-secondary mt-3">← Quay lại</a>

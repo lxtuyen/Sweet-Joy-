@@ -1,0 +1,26 @@
+<h3>Đơn hàng của tôi</h3>
+
+<% if(orders.length === 0) { %>
+  <p>Chưa có đơn nào 😢</p>
+<% } else { %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Mã đơn</th>
+      <th>Tổng tiền</th>
+      <th>Trạng thái</th>
+      <th>Ngày đặt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% orders.forEach(o => { %>
+      <tr>
+        <td><%= o._id %></td>
+        <td><%= o.totalPrice.toLocaleString() %> đ</td>
+        <td><span class="badge bg-success"><%= o.status %></span></td>
+        <td><%= o.createdAt.toLocaleString() %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<% } %>
